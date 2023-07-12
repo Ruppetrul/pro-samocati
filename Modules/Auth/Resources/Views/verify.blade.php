@@ -20,11 +20,12 @@
                                             @csrf
                                             <div class="form-group">
                                                 <x-auth-input name="verify_code" id="verify_code" value="{{ old('verify_code') }}"
-                                                placeholder="Verify code" />
+                                                placeholder="Код подтверждения" />
                                                 <x-share-error name="verify_code" />
                                             </div>
+                                            <br>
                                             <div class="login_footer form-group mb-50">
-                                                <a class="text-white btn" href="#"
+                                                <a class="btn" href="#"
                                                     onclick="event.preventDefault();document.getElementById('resend-code').submit()">
                                                     Отправить повторно код верификации
                                                 </a>
