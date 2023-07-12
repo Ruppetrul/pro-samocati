@@ -13,8 +13,8 @@
                                 <div class="login_wrap widget-taber-content background-white">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
-                                            <h1 class="mb-5">Verify email</h1>
-                                            <p>Check the email and enter to verify code.</p>
+                                            <h1 class="mb-5">Подтверждение почты</h1>
+                                            <p>Проверьте почту и введите код.</p>
                                         </div>
                                         <form method="POST" action="{{ route('verification.verify') }}">
                                             @csrf
@@ -26,7 +26,7 @@
                                             <div class="login_footer form-group mb-50">
                                                 <a class="text-white btn" href="#"
                                                     onclick="event.preventDefault();document.getElementById('resend-code').submit()">
-                                                    Send again verify code
+                                                    Отправить повторно код верификации
                                                 </a>
                                             </div>
                                             <div class="form-group mb-30">
