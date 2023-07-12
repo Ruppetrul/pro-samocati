@@ -3,6 +3,7 @@
 namespace Modules\Auth\Http\Controllers;
 
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Log;
 use Modules\Auth\Http\Requests\RegisterRequest;
 use Modules\Auth\Services\RegisterService;
 use Modules\Share\Http\Controllers\Controller;
@@ -17,7 +18,8 @@ class RegisterController extends Controller
      */
     public function view()
     {
-        return view('Auth::register');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+        return view('Auth::register', compact('cart_detail', 'cart_total'));
     }
 
     /**
@@ -30,7 +32,9 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request, RegisterService $registerService)
     {
+Log::info('start');
         $user = $registerService->storeUser($request->all()); // Make user
+Log::info($user);
 
         auth()->login($user); // Login User
         event(new Registered($user)); // Fire event

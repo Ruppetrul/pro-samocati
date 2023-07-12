@@ -24,7 +24,7 @@
 <script src="{{ asset('home/js/auto-height.js') }}"></script>
 
 {{-- Timer Js --}}
-<script src="{{ asset('home/js/timer.js') }}"></script>
+{{--<script src="{{ asset('home/js/timer.js') }}"></script>--}}
 
 {{-- Fly Cart Js --}}
 <script src="{{ asset('home/js/fly-cart.js') }}"></script>

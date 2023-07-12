@@ -17,7 +17,10 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('Home::Pages.contacts.create');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
+
+        return view('Home::Pages.contacts.create', compact('cart_detail', 'cart_total'));
     }
 
     /**

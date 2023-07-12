@@ -15,7 +15,13 @@
                                     <div class="product-header">
                                         <div class="product-image">
                                             <a href="{{ $product->path() }}">
-                                                <img src="{{ $product->first_media->thumb }}"
+                                                <img src="
+                                                @if (isset($product->first_media->thumb))
+                                                    {{ URL::to('/') . '/'  . $product->first_media->thumb }}
+                                                @else
+                                                    {{ asset('home/images/default_item_img.jpg') }}
+                                                @endif
+                                                "
                                                      class="img-fluid blur-up lazyload" alt="product image">
                                             </a>
                                         </div>
@@ -45,14 +51,14 @@
                                                 </ul>
                                                 <span>({{ $product->rates_count }})</span>
                                             </div>
-                                            <h6 class="unit">{{ $product->type }}</h6>
+{{--                                            <h6 class="unit">{{ $product->type }}</h6>--}}
                                             <h5 class="price">
-                                                <span class="theme-color">$ {{ $product->getPrice() }}</span>
+                                                <span class="theme-color"> {{ $product->getPrice() }} ₽</span>
                                                 {{--                                <del>$15.15</del>--}}
                                             </h5>
                                             <div class="add-to-cart-box bg-white">
                                                 <a class="btn btn-add-cart addcart-button" href="{{ $product->cartPath() }}">
-                                                    Add
+                                                    Добавить
                                                     <i class="fa-solid fa-plus bg-gray"></i>
                                                 </a>
                                             </div>

@@ -42,7 +42,7 @@ class VerifyMailNotification extends Notification
     }
 
     /**
-     * Save into database.
+     * Save into atabase.
      *
      * @param $notifiable
      *

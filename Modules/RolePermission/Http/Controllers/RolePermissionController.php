@@ -44,7 +44,9 @@ class RolePermissionController extends Controller
         $this->authorize('manage', $this->class);
         $roles = $this->repo->index()->paginate(10);
 
-        return view('RolePermission::index', compact('roles'));
+        list($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
+        return view('RolePermission::index', compact('roles', 'cart_detail', 'cart_total'));
     }
 
     /**

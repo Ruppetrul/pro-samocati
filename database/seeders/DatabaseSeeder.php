@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
     public static array $seeders;
 
     /**
-     * Seed the application's database.
+     * Seed the application's atabase.
      *
      * @return void
      */

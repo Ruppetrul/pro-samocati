@@ -16,6 +16,7 @@ class RegisterService
      */
     public function storeUser(array $data)
     {
+        $data['type'] = 'customer';
         return User::query()->create([
             'name'     => $data['name'],
             'email'    => $data['email'],

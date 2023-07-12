@@ -10,8 +10,8 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 me-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome To {{ config('app.name') }}</h3>
-                            <h4>Log In Your Account</h4>
+                            <h3>Добро пожаловать в {{ config('app.name') }}</h3>
+                            <h4>Вход</h4>
                         </div>
                         <div class="input-box">
                             <form class="row g-4" method="POST" action="{{ route('login') }}">
@@ -31,24 +31,24 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="forgot-box">
-                                        <a href="{{ route('password.request') }}" class="forgot-password">Forgot Password?</a>
+                                        <a href="{{ route('password.request') }}" class="forgot-password">Забыли пароль?</a>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <x-auth-button title="Log in" />
+                                    <x-auth-button title="Войти" />
                                 </div>
                             </form>
                         </div>
-                        <div class="other-log-in">
-                            <h6>or</h6>
-                        </div>
-                        @include('Auth::section.login-social')
+{{--                        <div class="other-log-in">--}}
+{{--                            <h6>or</h6>--}}
+{{--                        </div>--}}
+{{--                        @include('Auth::section.login-social')--}}
                         <div class="other-log-in">
                             <h6></h6>
                         </div>
                         <div class="sign-up-box">
-                            <h4>Don't have an account?</h4>
-                            <a href="{{ route('register') }}">Sign up</a>
+                            <h4>Ещё не зарегистрированы?</h4>
+                            <a href="{{ route('register') }}">Зарегистрироваться</a>
                         </div>
                     </div>
                 </div>

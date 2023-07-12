@@ -9,7 +9,10 @@
     </head>
     <body class="bg-effect">
 {{--        @include('Home::Home.section.preloader') --}}{{-- Include loader --}}
-        @include('Home::Home.section.header') {{-- Include header --}}
+        @include('Home::Home.section.header'
+,
+ [$cart_detail]
+ ) {{-- Include header --}}
         @include('Home::Home.section.mobile-menu') {{-- Include mobile menu --}}
             @yield('content') {{-- Yield content data --}}
         @include('Home::Home.section.footer') {{-- Include footer --}}

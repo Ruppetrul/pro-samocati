@@ -124,7 +124,7 @@ class RolePermissionServiceProvider extends ServiceProvider
     }
 
     /**
-     * Set database seeder with permission seeder.
+     * Set atabase seeder with permission seeder.
      *
      * @return void
      */

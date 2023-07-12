@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateViewsTable extends Migration
 {
     /**
-     * The database schema.
+     * The atabase schema.
      *
      * @var \Illuminate\Support\Facades\Schema
      */

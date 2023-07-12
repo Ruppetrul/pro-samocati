@@ -2,6 +2,8 @@
 
 namespace Modules\Category\Repositories;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Modules\Category\Enums\CategoryStatusEnum;
 use Modules\Category\Models\Category;
 
@@ -72,5 +74,29 @@ class CategoryRepoEloquent implements CategoryRepoEloquentInterface
     private function query()
     {
         return Category::query();
+    }
+
+    public static function create($category) {
+        Category::query()->create(array(
+            'user_id' => Auth::id(),
+            'title' => $category['title'],
+            'slug' => $category['title'],
+            'keywords' => 'keywords',
+            'status' => 'active',
+            'description' => 'description',
+            'media_id' => $category['media_id'] ?? null
+        ));
+    }
+
+    public static function update($category_id, $category) {
+        return  Category::query()->where('id', '=', $category_id)->update(array(
+            'user_id' => Auth::id(),
+            'title' => $category['title'],
+            'slug' => $category['title'],
+            'keywords' => 'keywords',
+            'status' => 'active',
+            'description' => 'description',
+            'media_id' => $category['media_id'] ?? null
+        ));
     }
 }

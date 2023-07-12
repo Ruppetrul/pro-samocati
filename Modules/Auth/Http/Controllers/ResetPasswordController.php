@@ -16,7 +16,8 @@ class ResetPasswordController extends Controller
      */
     public function view()
     {
-        return view('Auth::passwords.reset');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+        return view('Auth::passwords.reset', compact('cart_detail', 'cart_total'));
     }
 
     /**

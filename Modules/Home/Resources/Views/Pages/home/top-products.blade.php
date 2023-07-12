@@ -6,11 +6,11 @@
                     <div class="col-12">
                         <div class="top-selling-box">
                             <div class="top-selling-title">
-                                <h3>Top Selling</h3>
+                                <h3>Популярные товары</h3>
                             </div>
                             <div class="top-selling-contain wow fadeInUp">
                                 <a href="product-left.html" class="top-selling-image">
-                                    <img src="../assets/images/veg-2/top-selling/1.jpg"
+                                    <img src="{{ asset('home/images/default_item_img.jpg') }}"
                                          class="img-fluid blur-up lazyload" alt="">
                                 </a>
 
@@ -53,13 +53,13 @@
                                 <h3>Trending Products</h3>
                             </div>
                             @foreach ($homeRepo->getProductsByViews() as $product)
+
                                 <x-home-top-sell-product
-                                    imagePath="{{ $product->first_media->thumb }}"
+                                    imagePath="{{ isset($product->first_media->thumb) ? $product->first_media->thumb : asset('home/images/default_item_img.jpg') }}"
                                     path="{{ $product->path() }}"
                                     title="{{ $product->title }}"
                                     rates="{{ $product->rates_count }}"
-                                    price="{{ $product->getPrice() }}"
-                                />
+                                    price="{{ $product->getPrice() }}"></x-home-top-sell-product>
                             @endforeach
                         </div>
                     </div>
@@ -70,11 +70,11 @@
                     <div class="col-12">
                         <div class="top-selling-box">
                             <div class="top-selling-title">
-                                <h3>Random products</h3>
+                                <h3>Случайный товар</h3>
                             </div>
                             @foreach ($homeRepo->getRandomProducts() as $product)
                                 <x-home-top-sell-product
-                                    imagePath="{{ $product->first_media->thumb }}"
+                                    imagePath="{{ $product->first_media->thumb ?? asset('home/images/default_item_img.jpg')  }}"
                                     path="{{ $product->path() }}"
                                     title="{{ $product->title }}"
                                     rates="{{ $product->rates_count }}"
@@ -90,11 +90,11 @@
                     <div class="col-12">
                         <div class="top-selling-box">
                             <div class="top-selling-title">
-                                <h3>Top Rated</h3>
+                                <h3>Лучшая оценка</h3>
                             </div>
                             @foreach ($homeRepo->getTopRatedProducts() as $product)
                                 <x-home-top-sell-product
-                                    imagePath="{{ $product->first_media->thumb }}"
+                                    imagePath="{{ $product->first_media->thumb ?? asset('home/images/default_item_img.jpg')  }}"
                                     path="{{ $product->path() }}"
                                     title="{{ $product->title }}"
                                     rates="{{ $product->rates_count }}"

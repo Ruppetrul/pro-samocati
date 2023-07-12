@@ -3,7 +3,9 @@
 namespace Modules\Auth\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Modules\Auth\Http\Requests\LoginRequest;
+use Modules\Home\Http\Controllers\Cart\CartController;
 use Modules\Share\Http\Controllers\Controller;
 use Modules\Share\Services\ShareService;
 
@@ -16,7 +18,9 @@ class LoginController extends Controller
      */
     public function view()
     {
-        return view('Auth::login');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
+        return view('Auth::login', compact('cart_detail', 'cart_total'));
     }
 
     /**
@@ -32,10 +36,38 @@ class LoginController extends Controller
         $field = $this->filterEmail($email);
 
         if (Auth::attempt([$field => $email, 'password' => $request->password])) {
+            // Если по ip есть корзина, а у юзера нет, то переносим её.
+
+            $cart_ip = DB::table('cart')->where('ip_address', '=', $_SERVER['REMOTE_ADDR'])->first();
+
+            $cart_user = DB::table('cart')->where('user_id', '=', Auth::user()->id)->first();
+
+            if ($cart_ip && !$cart_user) {
+
+                $update_cart_id = $cart_ip->id;
+                DB::table('cart')->where('id', '=', $update_cart_id)->update(
+                    array(
+                        'user_id' => Auth::user()->id
+                    )
+                );
+            }
+
+            $cart_user = DB::table('cart')->where('user_id', '=', Auth::user()->id)->first();
+
+            if ($cart_user) {
+                DB::table('cart')->where('id', '=', $cart_user->id)->update(
+                    array(
+                        'ip_address' => $_SERVER['REMOTE_ADDR'])
+                );
+            }
+
+
             ShareService::successToast('Login successfully');
 
             return to_route('home.index');
         }
+
+
 
         ShareService::errorToast('Login unsuccessfully');
 

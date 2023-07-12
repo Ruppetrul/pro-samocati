@@ -3,6 +3,7 @@
 namespace Modules\Media\Services;
 
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Modules\Media\Contracts\FileServiceContract;
@@ -41,6 +42,11 @@ class ImageFileService extends DefaultFileService implements FileServiceContract
 
     public static function thumb(Media $media)
     {
-        return '/storage/'.$media->files['300'];
+        Log::info(json_encode($media));
+        //Log::info(json_encode($media->files['300']));
+        //Log::info(json_encode('/storage/'.$media->files['300']));
+       // return '/storage/'.$media->files['300'];
+       // return '/storage/' . $media->filename;
+        return $media->filename;
     }
 }

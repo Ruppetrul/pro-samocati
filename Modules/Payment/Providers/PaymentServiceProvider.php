@@ -100,7 +100,7 @@ class PaymentServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bind repositories.
+     * Bind Repositories.
      *
      * @return void
      */

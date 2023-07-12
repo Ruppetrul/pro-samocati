@@ -30,7 +30,7 @@ class ProductRepoEloquent implements ProductRepoEloquentInterface
     public function findProductBySkuWithSlug($sku, $slug)
     {
         return Product::query()
-            ->with(['galleries', 'categories', 'tags', 'attributes'])
+            ->with(['galleries', 'categories', 'tags', 'attributes','first_media'])
             ->withCount('rates')
             ->active()
             ->where('sku', (int) $sku)

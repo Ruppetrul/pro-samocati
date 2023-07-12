@@ -18,7 +18,9 @@ Route::group([], static function ($router) {
 
     // Products
     $router->get('products', ['uses' => 'Product\ProductController@index', 'as' => 'products.home']);
-    $router->get('products/{sku}/d/{slug}', ['uses' => 'Product\ProductController@details', 'as' => 'products.details']);
+    $router->get('products/{sku}/detail', ['uses' => 'Product\ProductController@details', 'as' => 'products.details']);
+
+//    $router->patch('products/{category}', ['uses' => 'Product\ProductController@index', 'as' => 'products.home']);
 
     // Blogs
     $router->get('blog', ['uses' => 'Blog\BlogController@index', 'as' => 'blog.home']);
@@ -32,7 +34,7 @@ Route::group([], static function ($router) {
     $router->post('contacts', ['uses' => 'Contact\ContactController@store', 'as' => 'contacts.store']);
 
     // Carts
-    $router->get('carts', ['uses' => 'Cart\CartController', 'as' => 'carts.home']);
+    $router->get('carts', ['uses' => 'Cart\CartController', 'as' => 'carts.home'])->middleware('auth');
 
     // Checkouts
     $router->get('checkouts', ['uses' => 'Checkout\CheckoutController', 'as' => 'checkouts.home'])->middleware('auth');

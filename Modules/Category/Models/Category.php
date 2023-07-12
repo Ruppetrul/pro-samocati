@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Article\Models\Article;
 use Modules\Category\Database\Factories\CategoryFactory;
 use Modules\Category\Enums\CategoryStatusEnum;
+use Modules\Media\Models\Media;
 use Modules\Product\Models\Product;
 use Modules\User\Models\User;
 
@@ -22,7 +23,7 @@ class Category extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['user_id', 'parent_id', 'title', 'slug', 'keywords', 'status', 'description'];
+    protected $fillable = ['user_id', 'parent_id', 'title', 'slug', 'keywords', 'status', 'description', 'media_id'];
 
     /**
      * Create a new factory instance for the model.
@@ -56,6 +57,17 @@ class Category extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    /**
+     * Relation to medias table, one to many.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function first_media()
+    {
+        return $this->belongsTo(Media::class, 'media_id');
+    }
+
 
     /**
      * Relation to parent, parent is this class(Category).

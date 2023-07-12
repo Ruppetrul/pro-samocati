@@ -13,6 +13,8 @@ class AboutController extends Controller
      */
     public function __invoke()
     {
-        return view('Home::Pages.about-us.index');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
+        return view('Home::Pages.about-us.index', compact('cart_detail', 'cart_total'));
     }
 }

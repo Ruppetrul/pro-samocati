@@ -11,6 +11,16 @@ class Media extends Model
 
     protected $casts = ['files' => 'json'];
 
+    /**
+     * Fillable columns.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'user_id', 'filename', 'files',
+        'type', 'is_private',
+    ];
+
     protected static function booted()
     {
         static::deleting(static function ($media) {

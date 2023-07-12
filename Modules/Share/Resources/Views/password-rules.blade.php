@@ -1,3 +1,3 @@
 <p>
-    Password must have a capital & lower letters with number & special character(Milwad123!).
+    Пароль должен состоять из заглавной и строчной букв с цифрой и специальным символом (Milwad123!).
 </p>

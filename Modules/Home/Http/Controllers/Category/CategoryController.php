@@ -2,6 +2,9 @@
 
 namespace Modules\Home\Http\Controllers\Category;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Modules\Cart\Http\Controllers\CartController;
 use Modules\Category\Enums\CategoryStatusEnum;
 use Modules\Category\Models\Category;
 use Modules\Share\Http\Controllers\Controller;
@@ -21,6 +24,8 @@ class CategoryController extends Controller
 
         $products = $category->products()->latest()->paginate(24);
 
-        return view('Home::Pages.categories.detail', compact(['category', 'products']));
+        list ($cart_detail, $cart_total) = CartController::getCartData();
+
+        return view('Home::Pages.categories.detail', compact(['category', 'products', 'cart_detail', 'cart_total']));
     }
 }

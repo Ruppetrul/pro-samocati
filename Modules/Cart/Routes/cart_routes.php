@@ -12,7 +12,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'auth'], static function ($router) {
-    $router->get('cart-add/{id}', ['uses' => 'CartController@add', 'as' => 'cart.add']);
-    $router->get('cart/{id}/delete', ['uses' => 'CartController@delete', 'as' => 'cart.delete']);
-    $router->get('cart/delete/all', ['uses' => 'CartController@deleteAll', 'as' => 'cart.delete.all']);
+
+
+
 });
+
+$router->any('cart/delete/all', ['uses' => 'CartController@deleteAll', 'as' => 'cart.delete.all']);
+$router->any('cart/{id}/delete', ['uses' => 'CartController@delete', 'as' => 'cart.delete']);
+$router->any('cart-add/{id}/{count}', ['uses' => 'CartController@addWithCount', 'as' => 'cart.addWithCount']);
+$router->any('cart-add/{id}/', ['uses' => 'CartController@add', 'as' => 'cart.add']);
+$router->any('cart-save', ['uses' => 'CartController@saveFullCart', 'as' => 'cart.save.full']);
+
+$router->any('cart-promote', ['uses' => 'CartController@promoteCartStatus', 'as' => 'cart.promote']);

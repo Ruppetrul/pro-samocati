@@ -13,7 +13,7 @@
                                  alt="contact-us img">
                         </div>
                         <div class="contact-title">
-                            <h3>Get In Touch</h3>
+                            <h3>Свяжитесь с нами</h3>
                         </div>
                         <div class="contact-detail">
                             <div class="row g-4">
@@ -23,7 +23,7 @@
                                             <i data-feather="phone"></i>
                                         </div>
                                         <div class="contact-detail-title">
-                                            <h4>Phone</h4>
+                                            <h4>Номер</h4>
                                         </div>
                                         <div class="contact-detail-contain">
                                             <p>{{ config('app.phone') }}</p>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-xxl-6">
                     <div class="title d-xxl-none d-block">
-                        <h2>Contact Us</h2>
+                        <h2>Наши контакты</h2>
                     </div>
                     <div class="right-sidebar-box">
                         <form action="{{ route('contacts.store') }}" method="POST">

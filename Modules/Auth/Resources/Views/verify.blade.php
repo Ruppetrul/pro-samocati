@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @include('Auth::section.login-social')
+{{--                            @include('Auth::section.login-social')--}}
                         </div>
                     </div>
                 </div>

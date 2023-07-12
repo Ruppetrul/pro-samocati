@@ -8,6 +8,7 @@ use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Log;
 use Milwad\LaravelAttributes\Traits\Attributable;
 use Modules\Category\Models\Category;
 use Modules\Comment\Traits\Commentable;
@@ -195,7 +196,7 @@ class Product extends Model implements Viewable
     {
         return route('products.details', [
             'sku'  => $this->sku,
-            'slug' => $this->slug,
+//            'slug' => $this->slug,
         ]);
     }
 

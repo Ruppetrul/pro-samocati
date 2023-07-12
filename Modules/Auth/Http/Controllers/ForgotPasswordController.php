@@ -19,7 +19,8 @@ class ForgotPasswordController extends Controller
      */
     public function showVerifyCodeRequestForm()
     {
-        return view('Auth::passwords.email');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+        return view('Auth::passwords.email', compact('cart_detail', 'cart_total'));
     }
 
     /**
@@ -40,7 +41,9 @@ class ForgotPasswordController extends Controller
             SendResetPasswordMailJob::dispatch($user);
         }
 
-        return view('Auth::passwords.enter-verify-code');
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
+        return view('Auth::passwords.enter-verify-code', compact('cart_detail', 'cart_total'));
     }
 
     /**

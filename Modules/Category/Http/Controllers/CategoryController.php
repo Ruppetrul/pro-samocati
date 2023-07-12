@@ -4,6 +4,8 @@ namespace Modules\Category\Http\Controllers;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Modules\Category\Enums\CategoryStatusEnum;
 use Modules\Category\Http\Requests\CategoryRequest;
 use Modules\Category\Models\Category;
@@ -41,6 +43,7 @@ class CategoryController extends Controller
     {
         $this->authorize('manage', $this->class);
         $categories = $this->repo->getLatestCategories()->paginate();
+
 
         return view('Category::index', compact('categories'));
     }

@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Advertising\Models\Advertising;
 use Modules\Article\Models\Article;
+use Modules\Auth\Notifications\NewOrderNotification;
 use Modules\Auth\Notifications\ResetPasswordRequestNotification;
 use Modules\Auth\Notifications\VerifyMailNotification;
 use Modules\Category\Models\Category;
@@ -60,6 +62,10 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     // Methods
+
+    public function sendInfoAboutOrder() {
+        $this->notify(new NewOrderNotification());
+    }
 
     /**
      * Override verify mail notification.
@@ -184,5 +190,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function address()
     {
         return $this->hasMany(UserAdress::class);
+    }
+
+    public function isAdmin()
+    {
+        //TODO make roles model
+        return true;
     }
 }

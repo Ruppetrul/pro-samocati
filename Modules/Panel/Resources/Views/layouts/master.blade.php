@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
     <head>
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
         @include('Panel::section.meta') {{-- Include Meta tags file --}}
 
         <title>@yield('title') - {{ config('app.name') }}</title>
