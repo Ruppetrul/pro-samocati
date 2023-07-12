@@ -8,7 +8,7 @@
 @extends('AdminPanel::app')
 
 @section('sidebar')
-    @extends('AdminPanel::admin-sidebar') {{-- Include header --}}
+    @include('AdminPanel::admin-sidebar') {{-- Include header --}}
 @endsection
 
 @section('style')@endsection
