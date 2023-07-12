@@ -5,7 +5,7 @@
 {{--    Moderator..--}}
 {{--@endrole--}}
 
-@extends('AdminPanel::app')
+@yield('AdminPanel::app')
 
 @section('sidebar')
     @yield('AdminPanel::admin-sidebar') {{-- Include header --}}
