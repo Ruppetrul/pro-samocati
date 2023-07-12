@@ -17,6 +17,7 @@
                             <form class="row g-4" method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="col-12">
+                                    <label for="" class="text-muted">Email</label>
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <x-auth-input name="email" id="email" value="{{ old('email') }}"
                                         placeholder="Email or Phone" />
@@ -24,6 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                    <label for="" class="text-muted">Пароль</label>
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <x-auth-input name="password" id="password" type="password" placeholder="Password" />
                                         <x-share-error name="password" />
