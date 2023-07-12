@@ -21,13 +21,13 @@
                                             <input type="hidden" name="email" value="{{ request()->email }}">
                                             <div class="form-group">
                                                 <x-auth-input name="verify_code" id="verify_code" value="{{ old('verify_code') }}"
-                                                type="number" placeholder="Verify code" />
+                                                type="number" placeholder="Код подтверждения" />
                                                 <x-share-error name="verify_code" />
                                             </div>
                                             <div class="login_footer form-group mb-50">
-                                                <a class="text-white btn" href="#"
+                                                <a class="btn" href="#"
                                                     onclick="event.preventDefault();document.getElementById('resend-code').submit()">
-                                                    Send again verify code
+                                                    Отправить ещё раз код подтверждения
                                                 </a>
                                             </div>
                                             <div class="form-group mb-30">
