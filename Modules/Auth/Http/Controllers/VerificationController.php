@@ -27,9 +27,11 @@ class VerificationController extends Controller
      */
     public function view(Request $request)
     {
+        list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
+
         return $request->user()->hasVerifiedEmail()
             ? redirect(route('home.index'))
-            : view('Auth::verify');
+            : view('Auth::verify', compact('cart_detail', 'cart_total'));
     }
 
     /**
