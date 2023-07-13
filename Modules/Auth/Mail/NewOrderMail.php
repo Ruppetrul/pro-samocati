@@ -18,7 +18,7 @@ class NewOrderMail extends Mailable
     public function build()
     {
         return $this
-            ->markdown('Auth::Mails.new-order-mail')
+            ->markdown('Auth::mails.new-order-mail')
             ->subject('Новый заказ! | '.config('app.name'));
     }
 }
