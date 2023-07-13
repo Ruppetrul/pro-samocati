@@ -13,7 +13,7 @@
 ,
  [$cart_detail]
  ) {{-- Include header --}}
-        @include('Home::Home.section.mobile-menu') {{-- Include mobile menu --}}
+{{--        @include('Home::Home.section.mobile-menu') --}}{{-- Include mobile menu --}}
             @yield('content') {{-- Yield content data --}}
         @include('Home::Home.section.footer') {{-- Include footer --}}
         @include('Home::Home.section.theme-options') {{-- Include theme options --}}
