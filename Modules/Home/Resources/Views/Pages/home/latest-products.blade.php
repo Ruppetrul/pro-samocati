@@ -55,22 +55,23 @@
                                             <div class="product-rating mt-2">
                                                 <ul class="rating">
                                                     <li>
-                                                        <i data-feather="star" class="fill"></i>
+                                                        <i data-feather="star"></i>
+                                                    </li>
+{{--                                                     class="fill"--}}
+                                                    <li>
+                                                        <i data-feather="star"></i>
                                                     </li>
                                                     <li>
-                                                        <i data-feather="star" class="fill"></i>
+                                                        <i data-feather="star"></i>
                                                     </li>
                                                     <li>
-                                                        <i data-feather="star" class="fill"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i data-feather="star" class="fill"></i>
+                                                        <i data-feather="star"></i>
                                                     </li>
                                                     <li>
                                                         <i data-feather="star"></i>
                                                     </li>
                                                 </ul>
-                                                <span>(34)</span>
+                                                <span>(0)</span>
                                             </div>
                                             <h6 class="sold weight text-content fw-normal">{{ $product->getSku() }}</h6>
                                             <div class="counter-box">

@@ -22,6 +22,6 @@
             </ul>
             <span>({{ $rates }})</span>
         </div>
-        <h6>$ {{ $price }}</h6>
+        <h6>{{ $price }} ₽</h6>
     </div>
 </div>

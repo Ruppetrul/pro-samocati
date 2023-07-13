@@ -50,7 +50,7 @@
                     <div class="col-12">
                         <div class="top-selling-box">
                             <div class="top-selling-title">
-                                <h3>Trending Products</h3>
+                                <h3>Популярные товары</h3>
                             </div>
                             @foreach ($homeRepo->getProductsByViews() as $product)
 
