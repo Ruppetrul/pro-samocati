@@ -14,7 +14,7 @@
     <!-- Title -->
     <title>Admin-panel</title>
 
-    @include('AdminPanel::AdminPanel.verticallayouts.style')
+    @include('adminpanel::adminpanel.verticallayouts.style')
 
 </head>
 <body class="main-body app sidebar-mini Light-mode">
@@ -23,14 +23,14 @@
 <!-- Page -->
 <div class="page">
 
-    @include('AdminPanel::AdminPanel.verticallayouts.main-sidebar')
+    @include('adminpanel::adminpanel.verticallayouts.main-sidebar')
 
     {{--    <!-- main-content -->--}}
     <div class="main-content app-content">
 
-        @include('AdminPanel::AdminPanel.verticallayouts.main-header')
+        @include('adminpanel::adminpanel.verticallayouts.main-header')
 
-        @include('AdminPanel::AdminPanel.verticallayouts.mobile-header')
+        @include('adminpanel::adminpanel.verticallayouts.mobile-header')
 
         <!-- container -->
         <div class="container-fluid">
@@ -50,7 +50,7 @@
 <!--End Page -->
 
 @livewireScripts
-@include('AdminPanel::AdminPanel.verticallayouts.script')
+@include('adminpanel::adminpanel.verticallayouts.script')
 
 </body>
 

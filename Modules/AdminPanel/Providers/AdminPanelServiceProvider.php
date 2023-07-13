@@ -11,7 +11,7 @@ class AdminPanelServiceProvider extends ServiceProvider
     /**
      * @var string $moduleName
      */
-    protected $moduleName = 'AdminPanel';
+    protected $moduleName = 'adminpanel';
 
     /**
      * @var string $moduleNameLower
@@ -30,7 +30,7 @@ class AdminPanelServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    private string $name = 'AdminPanel';
+    private string $name = 'adminpanel';
 
     /**
      * Boot the application events.
@@ -147,7 +147,7 @@ class AdminPanelServiceProvider extends ServiceProvider
      */
     private function loadViewComposerForAdminPanel()
     {
-        view()->composer(['AdminPanel::app'], static function ($view) {
+        view()->composer(['adminpanel::app'], static function ($view) {
             //$categories = $homeRepoEloquent->getLatestCategories();
             $view->with([]);
         });
