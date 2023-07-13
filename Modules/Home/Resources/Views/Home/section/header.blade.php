@@ -81,7 +81,16 @@
                         <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
                             <span class="navbar-toggler-icon">
-                                <i class="fa-solid fa-bars"></i>
+
+{{--                                <i class="fa-solid fa-bars"></i>--}}
+                            <div style=" border-bottom: 12px double black;
+                              border-top: 4px solid black;
+                              height: 4px;
+                              width: 30px;
+                              box-sizing: unset;
+                              display: inline-block;
+                              vertical-align: middle;" ></div >
+
                             </span>
                         </button>
                         <a href="{{  route('home.index') }}" class="web-logo nav-logo">
