@@ -22,17 +22,14 @@
 {{--                                                    </div>--}}
 {{--                                                </div>--}}
 {{--                                            @endforeach--}}
-                                            <img
-                                                width="250dp" height="250dp"
-                                                src="
+                                            <img src="
                                             @if (isset($product->first_media->thumb))
                                                 {{ URL::to('/') . '/'  . $product->first_media->thumb }}
                                             @else
                                                 {{ asset('home/images/default_item_img.jpg') }}
                                             @endif
                                              "
-{{--                                                 img-fluid --}}
-                                                 class="lazyload blur-up" alt="">
+                                                 class="img-fluid blur-up lazyload" alt="">
                                         </div>
                                     </div>
                                     <div class="col-12">
