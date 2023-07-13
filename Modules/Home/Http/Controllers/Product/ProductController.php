@@ -48,13 +48,13 @@ class ProductController extends Controller
                 ->with(['first_media'])
                 ->withCount('rates')
                 ->whereIn('id', array_values($products_ids))
-                ->paginate(16);
+                ->paginate(20);
         } else {
             $products = $productRepoEloquent
                 ->getLatest()
                 ->with(['first_media'])
                 ->withCount('rates')
-                ->paginate(16);
+                ->paginate(20);
         }
 
         $advs = resolve(AdvertisingRepoEloquentInterface::class)
