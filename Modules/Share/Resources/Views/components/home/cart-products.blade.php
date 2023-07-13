@@ -1,4 +1,4 @@
-<li class="product-box-contain">
+<li class="product-box-contain" style="width: 100%">
     <div class="drop-cart">
         <a href="
 {{--    route('products.details', ['sku' => $product->sku, 'slug' => $product->slug])--}}

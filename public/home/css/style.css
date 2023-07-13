@@ -7983,7 +7983,7 @@ header .onhover-dropdown .onhover-div .cart-list li .drop-cart .drop-contain h6 
 header .onhover-dropdown .onhover-div .cart-list li .drop-cart .drop-contain .close-button {
     position: absolute;
     top: 30px;
-    right: -90px;
+    right: -0px;
     background-color: transparent;
     border: none;
     padding: 0;
