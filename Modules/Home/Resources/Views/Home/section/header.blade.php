@@ -1,5 +1,8 @@
 <header class="pb-md-4 pb-0">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/admin/plugins/fontawesome-free/css/all.min.css">
+
+    <link href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 {{--    <div class="header-top">--}}
