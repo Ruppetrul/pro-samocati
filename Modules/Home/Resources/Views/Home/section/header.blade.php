@@ -168,7 +168,7 @@
                                                    class="btn btn-sm cart-button theme-bg-color text-white">
                                                     Удалить все
                                                 </a>
-                                                <a href="{{ route('carts.home') }}" class="btn btn-sm cart-button">Сделать заказ</a>
+                                                <a href="{{ route('carts.home') }}" class="btn btn-sm cart-button">Перейти в корзину</a>
 
 {{--                                                <a href="{{ route('checkouts.home') }}" class="btn btn-sm cart-button">Checkout</a>--}}
                                             </div>
@@ -195,24 +195,24 @@
 {{--                                                <li class="product-box-contain">--}}
 {{--                                                    <a href="sign-up.html">Заказы</a>--}}
 {{--                                                </li>--}}
-                                                <li class="product-box-contain">
-                                                    <a href="{{ route('logout') }}">Выход</a>
+                                                <li class="product-box-contain" >
+                                                    <a style="font-size: 14pt" href="{{ route('logout') }}">Выход</a>
                                                 </li>
                                                 @if (auth()->user()->is_admin === 1)
                                                     <li class="product-box-contain">
-                                                        <a href="{{ route('admin') }}">Админка</a>
+                                                        <a style="font-size: 14pt" href="{{ route('admin') }}">Админка</a>
                                                     </li>
                                                 @endif
                                             @else
                                                 <li class="product-box-contain">
                                                     <i></i>
-                                                    <a href="{{ route('login') }}">Войти</a>
+                                                    <a style="font-size: 14pt" href="{{ route('login') }}">Войти</a>
                                                 </li>
                                                 <li class="product-box-contain">
-                                                    <a href="{{ route('register') }}">Регистрация</a>
+                                                    <a style="font-size: 14pt" href="{{ route('register') }}">Регистрация</a>
                                                 </li>
                                                 <li class="product-box-contain">
-                                                    <a href="{{ route('password.request') }}">Забыл пароль</a>
+                                                    <a style="font-size: 14pt" href="{{ route('password.request') }}">Забыл пароль</a>
                                                 </li>
                                             @endauth
                                         </ul>
