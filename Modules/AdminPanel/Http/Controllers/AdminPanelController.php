@@ -23,13 +23,13 @@ class AdminPanelController extends Controller
      */
     public function index()
     {
-        return view('adminpanel::adminpanel.index');
+        return view('AdminPanel::adminpanel.index');
     }
 
 
     public function products() {
         $products = Product::all();
-        return view('adminpanel::layouts.products.products', array('products' => $products));
+        return view('AdminPanel::layouts.products.products', array('products' => $products));
     }
 
     public function products_create(Request $request) {
