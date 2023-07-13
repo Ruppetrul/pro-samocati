@@ -345,7 +345,7 @@
                                     </div>
                                     <div class="product-footer">
                                         <div class="product-detail">
-                                            <span class="span-name">{{ $product->vendor->name }}</span>
+{{--                                            <span class="span-name">{{ $product->vendor->name }}</span>--}}
                                             <a href="{{ $product->path() }}">
                                                 <h5 class="name">{{ $product->title }}</h5>
                                             </a>
