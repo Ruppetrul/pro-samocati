@@ -179,7 +179,8 @@ class CartController extends Controller
                     ]
                 );
             }
-
+        } else {
+            DB::table('cart_details')->where('id', '=', $cart_detail_id)->delete();
         }
 
         return $this->successMessageWithRedirect('Add to cart successfully');
