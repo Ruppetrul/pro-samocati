@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <x-auth-button title="Register" />
+                                    <x-auth-button title="Зарегистрироваться" />
                                 </div>
                             </form>
                         </div>
