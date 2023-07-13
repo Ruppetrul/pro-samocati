@@ -107,7 +107,7 @@
                                                 {{--                                                <h4 class="table-title text-content">Action</h4>--}}
                                                 {{--                                                <a class="save notifi-wishlist" href="javascript:void(0)">Save for later</a> TODO--}}
                                                 <a class="remove close_button" href="#"
-                                                   onclick="showConfirmMessage('Are you sure to delete?', '{{ route('cart.delete', $product['id']) }}');">
+                                                   onclick="showConfirmMessage('Удалить?', '{{ route('cart.delete', $product['id']) }}');">
                                                     Удалить
                                                 </a>
                                             </td>

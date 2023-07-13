@@ -22,7 +22,7 @@
             </a>
             <h6><span>{{ $product['quantity'] }} x</span> {{ $product['price'] }} ₽</h6>
             <a class="close-button close_button" align="right" href="#"
-               onclick="showConfirmMessage('Are you sure to delete?', '{{ route('cart.delete', $product['id']) }}');">
+               onclick="showConfirmMessage('Удалить?', '{{ route('cart.delete', $product['id']) }}');">
                 <i data-feather="x-circle"></i>
             </a>
         </div>
