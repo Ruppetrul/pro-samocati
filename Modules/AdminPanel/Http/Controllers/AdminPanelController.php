@@ -73,7 +73,7 @@ class AdminPanelController extends Controller
                 Log::debug($path);
             }
 
-            $product = resolve(ProductRepoEloquent::class)->create($product['name'], $product['price'], $product['count'], $product['count'],  $media_id);
+            $product = resolve(ProductRepoEloquent::class)->create($product,  $media_id);
 
             $categories = $request->post('categories');
 

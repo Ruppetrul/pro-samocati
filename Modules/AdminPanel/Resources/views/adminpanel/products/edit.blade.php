@@ -56,6 +56,16 @@
                                    name="product[count]" required>
                         </div>
                         <div class="col-12 mb-3">
+                            <label for="" class="text-muted">Краткое описание</label>
+                            <input type="text" class="form-control" value="{{$product['short_description']}}" placeholder=""
+                                   name="product[short_description]" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="" class="text-muted">Полное описание описание</label>
+                            <input type="text" class="form-control" value="{{$product['body']}}" placeholder=""
+                                   name="product[body]" required>
+                        </div>
+                        <div class="col-12 mb-3">
                             <label for="" class="text-muted">Старая картинка</label>
                             <img width="300" height="300" src="
                         @if (isset($product['first_media']['filename']))

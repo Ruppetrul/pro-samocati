@@ -53,23 +53,20 @@ class ProductRepoEloquent implements ProductRepoEloquentInterface
         return $this->query()->where('id', $id)->delete();
     }
 
-    public function create(string $title, float $price, int $count, int $sku, int $media_id = null)
+    public function create($product, $media_id)
     {
-
-
         return $this->query()->create(array(
             'vendor_id' => 2, //hardcode
             'slug' => 'slug',
-            'sku' => $sku,
+            'sku' => $product['sku'],
             'type' => 'item',
-            'short_description' => 'short_description',
+            'short_description' => $product['short_description'],
             'status' => 'active', // must be 'active' in dump CHECK
-            'body' => 'body',
+            'body' => $product['body'],
             'first_media_id' => $media_id,
-
-            'count' => $count,
-            'title' => $title,
-            'price' => $price,
+            'count' => $product['count'],
+            'title' => $product['name'],
+            'price' => $product['price'],
         ));
 
         /*[
