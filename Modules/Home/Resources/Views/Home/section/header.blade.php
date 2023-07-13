@@ -5,33 +5,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-{{--    <div class="header-top">--}}
-{{--        <div class="container-fluid-lg">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xxl-9 col-lg-9 d-lg-block d-none">--}}
-{{--                    <div class="header-offer">--}}
-{{--                        <div class="notification-slider">--}}
-{{--                            <div>--}}
-{{--                                <div class="timer-notification">--}}
-{{--                                    <h6><strong class="me-1">Добро пожаловать в {{ config('app.name') }}</strong>Wrap new offers/gift--}}
-{{--                                        every signle day on Weekends.<strong class="ms-1">New Coupon Code: Fast024--}}
-{{--                                        </strong>--}}
+    <div class="header-top">
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-xxl-9 col-lg-9 d-lg-block d-none">
+                    <div class="header-offer">
+                        <div class="notification-slider">
+                            <div>
+                                <div class="timer-notification">
+                                    <h6><strong class="me-1">Добро пожаловать в {{ config('app.name') }}</strong>Сайт находится в разработке, поэтому возможны проблемы.<strong class="ms-1">
+                                        </strong>
+                                    </h6>
+                                </div>
+                            </div>
 
-{{--                                    </h6>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <div>--}}
-{{--                                <div class="timer-notification">--}}
-{{--                                    <h6>Something you love is now on sale!--}}
-{{--                                        <a href="shop-left-sidebar.html" class="text-white">Buy Now--}}
-{{--                                            !</a>--}}
-{{--                                    </h6>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                            <div>
+                                <div class="timer-notification">
+                                    <h6>Если вы обнаружили проблему на сайте, сообщите нам!
+                                        <a href="shop-left-sidebar.html" class="text-white"></a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 {{--                <div class="col-lg-3">--}}
 {{--                    <ul class="about-list right-nav-about">--}}
 {{--                        <li class="right-nav-list">--}}
@@ -70,9 +67,9 @@
 {{--                        </li>--}}
 {{--                    </ul>--}}
 {{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+            </div>
+        </div>
+    </div>
     <div class="top-nav top-header sticky-header">
         <div class="container-fluid-lg">
             <div class="row">
