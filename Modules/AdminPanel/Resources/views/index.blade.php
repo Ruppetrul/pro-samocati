@@ -5,10 +5,10 @@
 {{--    Moderator..--}}
 {{--@endrole--}}
 
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar') {{-- Include header --}}
+    @include('AdminPanel::layouts.admincomponents.admin-sidebar') {{-- Include header --}}
 @endsection
 
 @section('style')@endsection

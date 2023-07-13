@@ -1,7 +1,7 @@
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar')
+    @include('AdminPanel::layouts.admincomponents.admin-sidebar')
 @endsection
 
 @section('style')
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-{{--    @include('layouts.alert')--}}
+    {{--    @include('layouts.alert')--}}
 
     <div class="card">
         <div class="card-body">
@@ -70,20 +70,22 @@
                             </td>
                             <td>
                                 <ul>
-                                @foreach($product['categories']  as $category)
+                                    @foreach($product['categories']  as $category)
                                         <li> {{ $category['title'] }} </li>
                                 @endforeach</td>
-                                </ul>
+                            </ul>
                             <td>{{ $product['count'] }}</td>
 
                             <td>{{ $product['price'] }}</td>
 
 
-{{--                            <td>--}}
-{{--                                <a href="{{ route('products.addNominals', $product['id']) }}">добавить</a>--}}
-{{--                            </td>--}}
-                            <td> <a href="{{ route('admin.products.edit', ['id' => $product['id']]) }}">Редактировать</a></td>
-                            <td> <a href="{{ route('admin.products.delete', ['id' => $product['id']]) }}">Удалить</a></td>
+                            {{--                            <td>--}}
+                            {{--                                <a href="{{ route('products.addNominals', $product['id']) }}">добавить</a>--}}
+                            {{--                            </td>--}}
+                            <td><a href="{{ route('admin.products.edit', ['id' => $product['id']]) }}">Редактировать</a>
+                            </td>
+                            <td><a href="{{ route('admin.products.delete', ['id' => $product['id']]) }}">Удалить</a>
+                            </td>
 
                         </tr>
                     @endforeach

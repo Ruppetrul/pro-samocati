@@ -1,7 +1,7 @@
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar')
+    @include('AdminPanel::layouts.admincomponents.admin-sidebar')
 @endsection
 
 @section('style')
@@ -16,7 +16,7 @@
 
 @section('content')
 
-{{--    @include('layouts.alert')--}}
+    {{--    @include('layouts.alert')--}}
 
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
@@ -44,33 +44,36 @@
                         <br>
                         <input class="form-control" type="text" placeholder="Цена за шт" name="product[price]" required>
                         <br>
-                        <input class="form-control" type="number" placeholder="Количество в наличии" name="product[count]" required>
+                        <input class="form-control" type="number" placeholder="Количество в наличии"
+                               name="product[count]" required>
                         <br>
                         <
                         @csrf
                         <input type="file" name="image"
-                               class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-{{--                        <input class="form-control mt-1" placeholder="plati-market id" type="number" name="product[id]" required>--}}
-{{--                        <input class="form-control mt-1" placeholder="Дата старта продаж" type="text" name="product[start_date]" required value="{{date('d.m.Y H:i:s')}}">--}}
-{{--                        <input class="form-control mt-1" placeholder="Ограничение по количеству выдаваемых ключей" type="number"  name="product[limit_keys]" required>--}}
-{{--                        <input class="form-control mt-1" placeholder="Минимально допустимое количество ключей у товара (при дочтижении этого количества, отправляется оповещение в телеграм)" type="number"  name="product[min_product_quantity]" required>--}}
+                               class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"/>
+                        {{--                        <input class="form-control mt-1" placeholder="plati-market id" type="number" name="product[id]" required>--}}
+                        {{--                        <input class="form-control mt-1" placeholder="Дата старта продаж" type="text" name="product[start_date]" required value="{{date('d.m.Y H:i:s')}}">--}}
+                        {{--                        <input class="form-control mt-1" placeholder="Ограничение по количеству выдаваемых ключей" type="number"  name="product[limit_keys]" required>--}}
+                        {{--                        <input class="form-control mt-1" placeholder="Минимально допустимое количество ключей у товара (при дочтижении этого количества, отправляется оповещение в телеграм)" type="number"  name="product[min_product_quantity]" required>--}}
                         <br>
                         <br>
                         <ul>
                             @foreach($categories as $category)
-                                 <li value=" {{ $category['id'] }}"><input type="checkbox" name="{{ 'categories[' . $category['id'] . ']'}}"> {{ $category['title'] }}</li>
+                                <li value=" {{ $category['id'] }}"><input type="checkbox"
+                                                                          name="{{ 'categories[' . $category['id'] . ']'}}"> {{ $category['title'] }}
+                                </li>
                             @endforeach
                         </ul>
 
                     </div>
                 </div>
-{{--                <a href="#" class="btn btn-primary mb-3" id="addNominal">Добавить номинал</a>--}}
+                {{--                <a href="#" class="btn btn-primary mb-3" id="addNominal">Добавить номинал</a>--}}
 
-                <button type="submit" class="btn btn-success btn-block  col-sm-6 col-md-3 mg-t-10 mg-sm-t-0">Сохранить</button>
+                <button type="submit" class="btn btn-success btn-block  col-sm-6 col-md-3 mg-t-10 mg-sm-t-0">Сохранить
+                </button>
             </div>
         </form>
     </div>
-
 
 @endsection
 
@@ -98,7 +101,5 @@
 
     <!-- Internal Form-wizard js -->
     <script src="{{URL::asset('assets/js/form-wizard.js')}}"></script>
-
-
 
 @endsection
