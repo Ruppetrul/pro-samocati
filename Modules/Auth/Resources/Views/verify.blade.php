@@ -30,9 +30,11 @@
                                                     Отправить повторно код верификации
                                                 </a>
                                             </div>
+                                            <br>
                                             <div class="form-group mb-30">
                                                 <x-auth-button title="Continue" />
                                             </div>
+                                            <br>
                                         </form>
                                         <form id="resend-code" action="{{ route('verification.resend') }}" method="POST">@csrf</form>
                                     </div>
