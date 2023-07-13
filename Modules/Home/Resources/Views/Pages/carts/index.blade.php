@@ -14,6 +14,16 @@
             </div>
         </div>
     </section>
+
+    @if(isset($message))
+        <a style="
+        display: table;
+        margin: 0 auto 0 auto;
+        font-size: 3em;
+        margin: 2ex;
+            ">{{ $message }}</a>
+    @endif
+
     <section class="cart-section section-b-space">
         <div class="container-fluid-lg">
             <div class="row g-sm-5 g-3">
@@ -114,7 +124,7 @@
                                         </tr>
                                     @endforeach
                                 @else
-                                    <h1>Ваша корзина пуста!</h1>
+                                    <h1>Сейчас ваша корзина пуста!</h1>
                                 @endif
 
 

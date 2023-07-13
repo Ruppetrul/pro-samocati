@@ -34,9 +34,9 @@ class CartController extends Controller
         $cart_id = null;
 
         list ($cart_detail, $cart_total, $cart_id) = \Modules\Cart\Http\Controllers\CartController::getCartData();
-
+        $res = null;
         if ($cart_id) {
-            DB::table('cart')->where('id', '=', $cart_id)->update(
+            $res = DB::table('cart')->where('id', '=', $cart_id)->update(
                 array('status' => 1)
             );
 
@@ -45,7 +45,13 @@ class CartController extends Controller
             $user->sendInfoAboutOrder();
         }
 
-        return redirect()->route('carts.home');
+        $data = array();
+
+        if ($res) {
+            $data = array('message' => "Заказ N '{$cart_id}' успешно создан! В ближайшее время мы свяжемся с вами для уточнения деталей.");
+        }
+
+        return redirect()->route('carts.home', $data);
     }
 
     public function saveFullCart(Request $request)
