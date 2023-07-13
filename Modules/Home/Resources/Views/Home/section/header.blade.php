@@ -122,21 +122,21 @@
                                 </div>
                             </div>
                             <ul class="right-side-menu">
-                                <li class="right-side">
-                                    <div class="delivery-login-box">
-                                        <div class="delivery-icon">
-                                            <div class="search-box">
-                                                <i data-feather="search"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+{{--                                <li class="right-side">--}}
+{{--                                    <div class="delivery-login-box">--}}
+{{--                                        <div class="delivery-icon">--}}
+{{--                                            <div class="search-box">--}}
+{{--                                                <i data-feather="search"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 {{--                                <li class="right-side">--}}
 {{--                                    <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">--}}
 {{--                                        <i data-feather="heart"></i>--}}
 {{--                                    </a>--}}
 {{--                                </li>--}}
-                                <li class="right-side">
+                                <li class="right-side onhover-dropdown">
                                     <div class="onhover-dropdown header-badge">
                                         <button type="button" class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
@@ -146,7 +146,6 @@
                                             </span>
                                         </button>
                                         <div class="onhover-div">
-
                                             <ul class="cart-list">
 
                                                 @if ($cart_detail)
@@ -154,7 +153,7 @@
                                                         @include('Share::components.home.cart-products', ['product' => $product])
                                                     @endforeach
                                                 @else
-                                                    <p>Cart is empty.</p>
+                                                    <p>Корзина пустая</p>
                                                 @endif
                                             </ul>
                                             <div class="price-box">
@@ -199,6 +198,9 @@
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('logout') }}">Выход</a>
                                                 </li>
+                                                <li class="product-box-contain">
+                                                    <a href="{{ route('carts.home') }}">Корзина</a>
+                                                </li>
                                                 @if (auth()->user()->is_admin === 1)
                                                     <li class="product-box-contain">
                                                         <a href="{{ route('admin') }}">Админка</a>
@@ -211,6 +213,9 @@
                                                 </li>
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('register') }}">Регистрация</a>
+                                                </li>
+                                                <li class="product-box-contain">
+                                                    <a href="{{ route('carts.home') }}">Корзина</a>
                                                 </li>
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('password.request') }}">Забыл пароль</a>
