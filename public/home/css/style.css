@@ -7694,13 +7694,13 @@ header .top-nav .navbar-top .rightside-box .right-side-menu .right-side:first-ch
     display: none
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 350px) {
     header .top-nav .navbar-top .rightside-box .right-side-menu .right-side:first-child {
         display: block
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 350px) {
     header .top-nav .navbar-top .rightside-box .right-side-menu .right-side:first-child {
         display: none
     }

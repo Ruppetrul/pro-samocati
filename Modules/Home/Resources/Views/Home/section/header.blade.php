@@ -198,9 +198,6 @@
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('logout') }}">Выход</a>
                                                 </li>
-                                                <li class="product-box-contain">
-                                                    <a href="{{ route('carts.home') }}">Корзина</a>
-                                                </li>
                                                 @if (auth()->user()->is_admin === 1)
                                                     <li class="product-box-contain">
                                                         <a href="{{ route('admin') }}">Админка</a>
@@ -213,9 +210,6 @@
                                                 </li>
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('register') }}">Регистрация</a>
-                                                </li>
-                                                <li class="product-box-contain">
-                                                    <a href="{{ route('carts.home') }}">Корзина</a>
                                                 </li>
                                                 <li class="product-box-contain">
                                                     <a href="{{ route('password.request') }}">Забыл пароль</a>
