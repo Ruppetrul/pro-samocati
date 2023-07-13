@@ -1,10 +1,10 @@
 <div class="col-xxl-9 col-lg-8">
     <div class="show-button">
-        <div class="filter-button-group mt-0">
-            <div class="filter-button d-inline-block d-lg-none">
-                <a><i class="fa-solid fa-filter"></i> Filter Menu</a>
-            </div>
-        </div>
+{{--        <div class="filter-button-group mt-0">--}}
+{{--            <div class="filter-button d-inline-block d-lg-none">--}}
+{{--                <a><i class="fa-solid fa-filter"></i> Filter Menu</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
         <div class="top-filter-menu">
 {{--            <div class="category-dropdown">--}}
