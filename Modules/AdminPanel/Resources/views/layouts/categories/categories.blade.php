@@ -1,7 +1,7 @@
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar')
+    @include('AdminPanel::layouts.admincomponents.adminsidebar')
 @endsection
 
 @section('style')
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-{{--    @include('layouts.alert')--}}
+    {{--    @include('layouts.alert')--}}
 
     <div class="card">
         <div class="card-body">
@@ -62,11 +62,14 @@
                                      alt="google">
                             </td>
 
-{{--                            <td>--}}
-{{--                                <a href="{{ route('products.addNominals', $product['id']) }}">добавить</a>--}}
-{{--                            </td>--}}
-                            <td> <a href="{{ route('admin.categories.edit', ['id' => $categorie['id']]) }}">Редактировать</a></td>
-                            <td> <a href="{{ route('admin.categories.delete', ['id' => $categorie['id']]) }}">Удалить</a></td>
+                            {{--                            <td>--}}
+                            {{--                                <a href="{{ route('products.addNominals', $product['id']) }}">добавить</a>--}}
+                            {{--                            </td>--}}
+                            <td>
+                                <a href="{{ route('admin.categories.edit', ['id' => $categorie['id']]) }}">Редактировать</a>
+                            </td>
+                            <td><a href="{{ route('admin.categories.delete', ['id' => $categorie['id']]) }}">Удалить</a>
+                            </td>
 
                         </tr>
                     @endforeach

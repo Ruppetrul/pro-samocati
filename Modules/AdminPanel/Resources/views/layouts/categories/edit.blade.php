@@ -1,13 +1,13 @@
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar')
+    @include('AdminPanel::layouts.admincomponents.adminsidebar')
 @endsection
 @section('content')
 
     <div class="container">
 
-{{--        @include('layouts.alert')--}}
+        {{--        @include('layouts.alert')--}}
 
         <div class="breadcrumb-header justify-content-between">
             <div class="my-auto">
@@ -19,9 +19,9 @@
         </div>
 
         <div class="card">
-{{--            @dump($nominals, $keys)--}}
+            {{--            @dump($nominals, $keys)--}}
             <form enctype="multipart/form-data" action="{{ route('admin.categories.edit') }}" method="post">
-{{--                @method('PUT')--}}
+                {{--                @method('PUT')--}}
                 @csrf
                 <div class="card-body">
                     <div class="main-content-label mb-3">
@@ -32,11 +32,13 @@
                         <div class="col-12 mb-3">
                             <label for="" class="text-muted">id</label>
                             <br>
-                            <input class="form-control" type="text" readonly="readonly" value="{{$category['id']}}" name="category[id]">
+                            <input class="form-control" type="text" readonly="readonly" value="{{$category['id']}}"
+                                   name="category[id]">
                         </div>
                         <div class="col-12 mb-3">
                             <label for="" class="text-muted">Название</label>
-                            <input class="form-control" value="{{$category['title']}}" type="text" name="category[title]" required>
+                            <input class="form-control" value="{{$category['title']}}" type="text"
+                                   name="category[title]" required>
                         </div>
 
                     </div>
@@ -53,10 +55,12 @@
 
                         @csrf
                         <input type="file" name="image"
-                               class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                               class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"/>
 
                     </div>
-                    <button type="submit" class="btn btn-success btn-block col-sm-6 col-md-3 mg-t-10 mg-sm-t-0">Сохранить</button>
+                    <button type="submit" class="btn btn-success btn-block col-sm-6 col-md-3 mg-t-10 mg-sm-t-0">
+                        Сохранить
+                    </button>
                 </div>
 
 
@@ -64,6 +68,5 @@
         </div>
 
     </div>
-
 
 @endsection

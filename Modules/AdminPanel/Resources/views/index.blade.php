@@ -5,14 +5,13 @@
 {{--    Moderator..--}}
 {{--@endrole--}}
 
-@extends('AdminPanel::app')
+@extends('AdminPanel::layouts.admincomponents.app')
 
 @section('sidebar')
-    @include('AdminPanel::admin-sidebar') {{-- Include header --}}
+    @include('AdminPanel::layouts.admincomponents.adminsidebar') {{-- Include header --}}
 @endsection
 
 @section('style')@endsection
-
 
 {{--@section('content')--}}
 
