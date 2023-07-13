@@ -2,6 +2,7 @@
     <li class="slide">
         <a class="side-menu__item" href="{{ route('home.index') }}"><span class="side-menu__label">На сайт</span></a>
     </li>
+
     <li class="slide">
         <a class="side-menu__item" data-toggle="slide" href="#"><span class="side-menu__label">Тестовая вкладка</span><i class="angle fe fe-chevron-down"></i></a>
         <ul class="slide-menu">
