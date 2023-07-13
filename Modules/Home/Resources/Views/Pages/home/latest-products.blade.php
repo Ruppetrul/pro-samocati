@@ -1,7 +1,7 @@
 <section>
     <div class="container-fluid-lg">
         <div class="title">
-            <h2>Последние продукты</h2>
+            <h2>Последние товары</h2>
             <span class="title-leaf">
                 <svg class="icon-width">
                     <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
