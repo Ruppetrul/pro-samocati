@@ -28,7 +28,7 @@ class AdminPanelController extends Controller
 
     public function products() {
         $products = Product::all();
-        return view('adminpanel::layouts.products.products', array('products' => $products));
+        return view('adminpanel::adminpanel.products.products', array('products' => $products));
     }
 
     public function products_create(Request $request) {
@@ -105,7 +105,7 @@ class AdminPanelController extends Controller
 
             return redirect()->route('admin.products');
         } else {
-            return view('adminpanel::layouts.products.create',
+            return view('adminpanel::adminpanel.products.create',
                 array(
                     'products' => array(),
                     'categories' => Category::all(),
@@ -177,7 +177,7 @@ class AdminPanelController extends Controller
             }
             //var_dump($product);
 
-            return view('adminpanel::layouts.products.edit', array(
+            return view('adminpanel::adminpanel.products.edit', array(
                 'product' => $product,
                 'categories' => Category::all(),
                 'rel_categories' => $rel_categorioes,
@@ -196,7 +196,7 @@ class AdminPanelController extends Controller
 
     public function categories(Request $request) {
         $categories = Category::all();
-        return view('adminpanel::layouts.categories.categories', ['categories' => $categories]);
+        return view('adminpanel::adminpanel.categories.categories', ['categories' => $categories]);
     }
 
     public function categories_create(Request $request) {
@@ -234,9 +234,9 @@ class AdminPanelController extends Controller
 
             resolve(CategoryRepoEloquent::class)->create($category);
             $categories = Category::all();
-            return view('adminpanel::layouts.categories.categories', ['categories' => $categories]);
+            return view('adminpanel::adminpanel.categories.categories', ['categories' => $categories]);
         } else {
-            return view('adminpanel::layouts.categories.create');
+            return view('adminpanel::adminpanel.categories.create');
         }
     }
 
@@ -283,7 +283,7 @@ class AdminPanelController extends Controller
 
         $category = resolve(CategoryRepoEloquent::class)->findById($category_id);
         log::debug('categories_edit 3');
-        return view('adminpanel::layouts.categories.edit', array('category' => $category));
+        return view('adminpanel::adminpanel.categories.edit', array('category' => $category));
     }
 
     public function categories_delete(Request $request) {

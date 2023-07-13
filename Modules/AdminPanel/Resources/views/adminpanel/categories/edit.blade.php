@@ -1,7 +1,7 @@
-@extends('adminpanel::layouts.admincomponents.app')
+@extends('adminpanel::adminpanel.app')
 
 @section('sidebar')
-    @include('adminpanel::layouts.admincomponents.adminsidebar')
+    @include('adminpanel::adminpanel.adminsidebar')
 @endsection
 @section('content')
 
