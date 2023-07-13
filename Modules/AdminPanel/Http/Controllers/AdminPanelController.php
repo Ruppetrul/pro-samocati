@@ -23,7 +23,7 @@ class AdminPanelController extends Controller
      */
     public function index()
     {
-        return view('AdminPanel::adminpanel.index');
+        return view('AdminPanel::index');
     }
 
 
