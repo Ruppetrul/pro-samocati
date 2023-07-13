@@ -40,7 +40,7 @@ class AdminPanelController extends Controller
             if ($request->hasFile('image')) {
                 Log::debug('before');
                 $validatedData = $request->validate([
-                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
                 Log::debug('after');
@@ -208,7 +208,7 @@ class AdminPanelController extends Controller
             if ($request->hasFile('image')) {
                 Log::info('before');
                 $validatedData = $request->validate([
-                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
                 Log::info('after');
@@ -249,7 +249,7 @@ class AdminPanelController extends Controller
             if ($request->hasFile('image')) {
                 Log::info('before');
                 $validatedData = $request->validate([
-                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                    'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
                 Log::info('after');
