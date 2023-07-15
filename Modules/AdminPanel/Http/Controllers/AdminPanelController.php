@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use Modules\Category\Models\Category;
 use Modules\Category\Repositories\CategoryRepoEloquent;
 use Modules\Media\Models\Media;
@@ -35,42 +37,28 @@ class AdminPanelController extends Controller
         $media_id = null;
         if ($request->isMethod('post')) {
             $product = $request->post('product');
-
-//            $media_id = null;
             if ($request->hasFile('image')) {
-                Log::debug('before');
                 $validatedData = $request->validate([
                     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
-                Log::debug('after');
 
-                $name = $request->file('image')->getClientOriginalName();
-                $path = $request->file('image')->store('public/images');
 
-                $path = str_replace(
-                    'public/images',
-                    'storage/images',
-                    $path,
-                );
+                $file = $request->file('image');
+                $path = $file->hashName();
+                $image = Image::make($file)->resize(600, 600);
+                Storage::disk('public')->put($path, $image->stream());
 
+                $path = 'storage/' . $path;
                 $media = Media::query()->create([
                     'user_id'     => 1,
                     'filename'    => $path,
-                    'files'       => $name,
+                    'files'       => $path,
                     'type'        => 'image',
                     'is_private'  => 0,
                 ]);
 
                 $media_id = $media['id'];
-                Log::debug('$media');
-                Log::debug($media);
-
-                Log::debug('$name');
-                Log::debug($name);
-
-                Log::debug('$path');
-                Log::debug($path);
             }
 
             $product = resolve(ProductRepoEloquent::class)->create($product,  $media_id);
@@ -126,19 +114,17 @@ class AdminPanelController extends Controller
                     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
-                $name = $request->file('image')->getClientOriginalName();
-                $path = $request->file('image')->store('public/images');
+                $file = $request->file('image');
+                $path = $file->hashName();
+                $image = Image::make($file)->resize(600, 600);
+                Storage::disk('public')->put($path, $image->stream());
 
-                $path = str_replace(
-                    'public/images',
-                    'storage/images',
-                    $path,
-                );
+                $path = 'storage/' . $path;
 
                 $media = Media::query()->create([
                     'user_id'     => 1,
                     'filename'    => $path,
-                    'files'       => $name,
+                    'files'       => $path,
                     'type'        => 'image',
                     'is_private'  => 0,
                 ]);
@@ -153,7 +139,7 @@ class AdminPanelController extends Controller
 
             if ($categories = $request->post('categories')) {
 
-                DB::table('product_category')->where('product_id', $product_id)->delete();
+             DB::table('product_category')->where('product_id', $product_id)->delete();
 
                     /*::query()
             ->with('media')
@@ -206,25 +192,21 @@ class AdminPanelController extends Controller
 
             //$media_id = null;
             if ($request->hasFile('image')) {
-                Log::info('before');
                 $validatedData = $request->validate([
                     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
-                Log::info('after');
-                $name = $request->file('image')->getClientOriginalName();
-                $path = $request->file('image')->store('public/images');
+                $file = $request->file('image');
+                $path = $file->hashName();
+                $image = Image::make($file)->resize(600, 600);
+                Storage::disk('public')->put($path, $image->stream());
 
-                $path = str_replace(
-                    'public/images',
-                    'storage/images',
-                    $path,
-                );
+                $path = 'storage/' . $path;
 
                 $media = Media::query()->create([
                     'user_id'     => 1,
                     'filename'    => $path,
-                    'files'       => $name,
+                    'files'       => $path,
                     'type'        => 'image',
                     'is_private'  => 0,
                 ]);
@@ -247,25 +229,21 @@ class AdminPanelController extends Controller
             $category= $request->get('category');
 
             if ($request->hasFile('image')) {
-                Log::info('before');
                 $validatedData = $request->validate([
                     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:10048',
 
                 ]);
-                Log::info('after');
-                $name = $request->file('image')->getClientOriginalName();
-                $path = $request->file('image')->store('public/images');
+                $file = $request->file('image');
+                $path = $file->hashName();
+                $image = Image::make($file)->resize(600, 600);
+                Storage::disk('public')->put($path, $image->stream());
 
-                $path = str_replace(
-                    'public/images',
-                    'storage/images',
-                    $path,
-                );
+                $path = 'storage/' . $path;
 
                 $media = Media::query()->create([
                     'user_id'     => 1,
                     'filename'    => $path,
-                    'files'       => $name,
+                    'files'       => $path,
                     'type'        => 'image',
                     'is_private'  => 0,
                 ]);
