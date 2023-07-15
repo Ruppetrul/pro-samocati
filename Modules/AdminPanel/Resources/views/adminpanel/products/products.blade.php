@@ -53,7 +53,7 @@
                                 {{ $product['id'] }}
                             </td>
                             <td>
-                                <img width="200" height="200" src="
+                                <img style="width: auto; height: auto" width="200" height="200" src="
                                 @if (isset($product->first_media->thumb))
                                     {{ URL::to('/') . '/'  . $product->first_media->thumb }}
                                 @else
