@@ -38,7 +38,9 @@
                     <thead>
                     <tr>
                         <th>id</th>
-                        <th>Status</th>
+                        <th>Статус</th>
+                        <th>Детали</th>
+                        <th>Дата обновления</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -48,9 +50,28 @@
                                 {{ $order->id }}
                             </td>
                             <td>
-                                {{ $order->status }}
+                                @if($order->status === 1)
+                                    В обработке
+                                @elseif($order->status === 2)
+                                    Завершен
+                                @endif
                             </td>
                             <td>
+                                <ul>
+                                @foreach($order->detail as $detail)
+                                        <li>
+                                    @if (isset($detail->product_name))
+                                             {{ $detail->product_name }}
+                                    @else
+                                             Продукт не найден
+                                    @endif
+
+                                    ({{ $detail->products_count_id_cart }}шт.)
+
+                                        </li>
+
+                                @endforeach
+                                  </ul>
 {{--                                <img style="width: 100%; max-width: 250px;" src="--}}
 {{--                                @if (isset($categorie->first_media->thumb))--}}
 {{--                                    {{ URL::to('/') . '/'  . $categorie->first_media->thumb }}--}}
@@ -59,6 +80,9 @@
 {{--                                @endif--}}
 {{--                                 " class="blur-up lazyload"--}}
 {{--                                     alt="google">--}}
+                            </td>
+                            <td>
+                                {{ $order->updated_at }}
                             </td>
 
                             {{--                            <td>--}}

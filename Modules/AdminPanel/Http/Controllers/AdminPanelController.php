@@ -188,6 +188,25 @@ class AdminPanelController extends Controller
 
     public function orders(Request $request) {
         $orders = DB::table('cart')->where('status', '!=', 0)->select()->get();
+
+        foreach ($orders as &$order) {
+            $cart_detail = DB::table('cart_details')
+                ->where('cart_id', '=', $order->id, 'AND')
+                ->select()->get();
+
+            foreach ($cart_detail as &$detail) {
+                $prd = Product::query()->where('id', '=', $detail->product_id)->first();
+
+                if ($prd) {
+                    $detail->product_name = $prd->title;
+                }
+
+                $detail->products_count_id_cart = $detail->count;
+            }
+
+            $order->detail = $cart_detail;
+        }
+
         return view('adminpanel::adminpanel.orders.orders', ['orders' => $orders]);
     }
 
