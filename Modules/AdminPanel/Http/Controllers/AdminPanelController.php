@@ -188,7 +188,7 @@ class AdminPanelController extends Controller
     }
 
     public function orders(Request $request) {
-        $orders = DB::table('cart')->where('status', '!=', 0)->select()->get();
+        $orders = DB::table('cart')->where('status', '!=', 0)->select()->orderByDesc('id')->get();
 
         foreach ($orders as &$order) {
             $cart_detail = DB::table('cart_details')
