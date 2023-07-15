@@ -78,33 +78,18 @@
                         <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
                             <span class="navbar-toggler-icon">
-
-{{--                                <i class="fa-solid fa-bars"></i>--}}
-                            <div style=" border-bottom: 12px double black;
-                              border-top: 4px solid black;
-                              height: 4px;
-                              width: 30px;
-                              box-sizing: unset;
-                              display: inline-block;
-                              vertical-align: middle;" ></div >
-
+                                <i class="fa fa-solid fa-bars"></i>
                             </span>
                         </button>
                         <div>
                         <a href="{{  route('home.index') }}" class="web-logo nav-logo">
                             <h2> {{ env('APP_NAME') }}</h2>
                         </a>
-
-                                <br>
-                                    <a>Позвоните по номеру:</a>
-                                    <a href="tel:+79508384823">+7 (950) 838-48-23</a>
-                                <br>
-                                    <a> либо сделайте заказ на сайте.</a>
-
-
-{{--                            <br>--}}
-{{--                            <h3>Позвоните по номеру: {{ env('APP_PHONE') }} либо сделайте заказ на сайте.</h3>--}}
-{{--                            <img src="{{ asset('home/images/logo/1.png') }}" class="img-fluid blur-up lazyload" alt="">--}}
+                        <br>
+                            <a>Позвоните по номеру:</a>
+                            <a href="tel:+79508384823">+7 (950) 838-48-23</a>
+                        <br>
+                            <a> либо сделайте заказ на сайте.</a>
                         </div>
                         <div class="middle-box">
                             <div class="search-box">
