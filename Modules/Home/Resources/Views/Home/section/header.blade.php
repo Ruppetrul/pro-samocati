@@ -90,10 +90,22 @@
 
                             </span>
                         </button>
+                        <div>
                         <a href="{{  route('home.index') }}" class="web-logo nav-logo">
                             <h2> {{ env('APP_NAME') }}</h2>
-{{--                            <img src="{{ asset('home/images/logo/1.png') }}" class="img-fluid blur-up lazyload" alt="">--}}
                         </a>
+
+                                <br>
+                                    <a>Позвоните по номеру:</a>
+                                    <a href="tel:+79508384823">+7 (950) 838-48-23</a>
+                                <br>
+                                    <a> либо сделайте заказ на сайте.</a>
+
+
+{{--                            <br>--}}
+{{--                            <h3>Позвоните по номеру: {{ env('APP_PHONE') }} либо сделайте заказ на сайте.</h3>--}}
+{{--                            <img src="{{ asset('home/images/logo/1.png') }}" class="img-fluid blur-up lazyload" alt="">--}}
+                        </div>
                         <div class="middle-box">
                             <div class="search-box">
                                 <div class="input-group">
