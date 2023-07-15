@@ -22,11 +22,11 @@
 
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <h3 class="content-title mb-2">Категории</h3>
+            <h3 class="content-title mb-2">Заказы</h3>
         </div>
-        <div class="d-flex align-items-end flex-wrap my-auto right-content breadcrumb-right">
-            <a href="{{ route('admin.categories.create') }}" class="btn btn-success mt-2 mt-xl-0">Добавить категорию</a>
-        </div>
+{{--        <div class="d-flex align-items-end flex-wrap my-auto right-content breadcrumb-right">--}}
+{{--            <a href="{{ route('admin.categories.create') }}" class="btn btn-success mt-2 mt-xl-0">Добавить категорию</a>--}}
+{{--        </div>--}}
     </div>
 
     {{--    @include('layouts.alert')--}}
