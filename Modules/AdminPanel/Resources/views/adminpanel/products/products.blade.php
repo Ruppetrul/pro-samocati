@@ -40,7 +40,7 @@
                         <th>id товара</th>
                         <th>Картинка</th>
                         <th>Название</th>
-                        <th>артикул</th>
+{{--                        <th>артикул</th>--}}
                         <th>Категории</th>
                         <th>Цена</th>
                         <th>Количество в наличии</th>
@@ -65,9 +65,9 @@
                             <td>
                                 {{ $product['title'] }}
                             </td>
-                            <td>
-                                {{ $product['sku'] }}
-                            </td>
+{{--                            <td>--}}
+{{--                                {{ $product['sku'] }}--}}
+{{--                            </td>--}}
                             <td>
                                 <ul>
                                     @foreach($product['categories']  as $category)

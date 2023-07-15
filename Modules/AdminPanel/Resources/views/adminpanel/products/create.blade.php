@@ -40,8 +40,8 @@
                         <label for="" class="text-muted">Товар</label>
                         <input class="form-control" type="text" placeholder="Название" name="product[name]" required>
                         <br>
-                        <input class="form-control" type="number" placeholder="Артикул" name="product[sku]" required>
-                        <br>
+{{--                        <input class="form-control" type="number" placeholder="Артикул" name="product[sku]">--}}
+{{--                        <br>--}}
                         <input class="form-control" type="text" placeholder="Цена за шт" name="product[price]" required>
                         <br>
                         <input class="form-control" type="number" placeholder="Количество в наличии"

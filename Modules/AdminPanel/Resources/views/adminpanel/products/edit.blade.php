@@ -40,11 +40,11 @@
                             <input class="form-control" value="{{$product['title']}}" type="text" name="product[title]"
                                    required>
                         </div>
-                        <div class="col-12 mb-3">
-                            <label for="" class="text-muted">Артикул</label>
-                            <input class="form-control" value="{{$product['sku']}}" type="number" name="product[sku]"
-                                   required>
-                        </div>
+{{--                        <div class="col-12 mb-3">--}}
+{{--                            <label for="" class="text-muted">Артикул</label>--}}
+{{--                            <input class="form-control" value="{{$product['sku']}}" type="number" name="product[sku]"--}}
+{{--                                   required>--}}
+{{--                        </div>--}}
                         <div class="col-12 mb-3">
                             <label for="" class="text-muted">Цена</label>
                             <input class="form-control" value="{{$product['price']}}" placeholder="id"

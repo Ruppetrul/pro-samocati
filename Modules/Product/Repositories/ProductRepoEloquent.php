@@ -55,6 +55,9 @@ class ProductRepoEloquent implements ProductRepoEloquentInterface
 
     public function create($product, $media_id)
     {
+        $res = Product::whereRaw('id = (select max(`id`) from products)')->first();
+        $product['sku'] = $res ? $res->id + 1 : 1;
+
         return $this->query()->create(array(
             'vendor_id' => 2, //hardcode
             'slug' => 'slug',
