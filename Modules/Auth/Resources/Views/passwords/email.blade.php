@@ -13,8 +13,8 @@
                                 <div class="login_wrap widget-taber-content background-white">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
-                                            <h1 class="mb-5">Forgot password</h1>
-                                            <p class="mb-30">You don't have account? <a href="{{ route('register') }}">Register</a></p>
+                                            <h1 class="mb-5">Восстановление пароля</h1>
+                                            <p class="mb-30">У вас нет аккаунта? <a href="{{ route('register') }}">Регистрация</a></p>
                                         </div>
                                         <form method="GET" action="{{ route('password.sendVerifyCodeEmail') }}">
                                             <div class="form-group">
@@ -23,7 +23,7 @@
                                                 <x-share-error name="email" />
                                             </div>
                                             <div class="form-group mb-30">
-                                                <x-auth-button title="Submit &amp; Register" />
+                                                <x-auth-button title="Восстановить пароль" />
                                             </div>
                                         </form>
                                     </div>
