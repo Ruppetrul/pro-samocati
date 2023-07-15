@@ -24,4 +24,6 @@ Route::prefix('adminpanel')->group(function() {
     Route::any('/categories_create', 'AdminPanelController@categories_create')->name('admin.categories.create'); //TODO middlewatra only admin
     Route::any('/categories_edit', 'AdminPanelController@categories_edit')->name('admin.categories.edit'); //TODO middlewatra only admin
     Route::any('/categories_delete', 'AdminPanelController@categories_delete')->name('admin.categories.delete'); //TODO middlewatra only admin
+
+    Route::any('/orders', 'AdminPanelController@orders')->name('admin.orders'); //TODO middlewatra only admin
 });

@@ -5,6 +5,7 @@ namespace Modules\AdminPanel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -184,6 +185,12 @@ class AdminPanelController extends Controller
         $categories = Category::all();
         return view('adminpanel::adminpanel.categories.categories', ['categories' => $categories]);
     }
+
+    public function orders(Request $request) {
+        $orders = DB::table('cart')->where('status', '!=', 0)->select()->get();
+        return view('adminpanel::adminpanel.orders.orders', ['orders' => $orders]);
+    }
+
 
     public function categories_create(Request $request) {
         if (($request->isMethod('post') or $request->isMethod('put')) and $request->post('categorie')) {
