@@ -52,7 +52,7 @@
                                 {{ $categorie['title'] }}
                             </td>
                             <td>
-                                <img style="width: auto; height: auto" width="200" height="200" src="
+                                <img style="width: 100%; max-width: 250px;" src="
                                 @if (isset($categorie->first_media->thumb))
                                     {{ URL::to('/') . '/'  . $categorie->first_media->thumb }}
                                 @else

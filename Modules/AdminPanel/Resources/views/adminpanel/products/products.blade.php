@@ -53,12 +53,12 @@
                                 {{ $product['id'] }}
                             </td>
                             <td>
-                                <img style="width: auto; height: auto" width="200" height="200" src="
-                                @if (isset($product->first_media->thumb))
-                                    {{ URL::to('/') . '/'  . $product->first_media->thumb }}
-                                @else
-                                    {{ asset('home/images/default_item_img.jpg') }}
-                                @endif
+                                <img style="width: 100%; max-width: 250px;" src="
+                                    @if (isset($product->first_media->thumb))
+                                        {{ URL::to('/') . '/'  . $product->first_media->thumb }}
+                                    @else
+                                        {{ asset('home/images/default_item_img.jpg') }}
+                                    @endif
                                  " class="blur-up lazyload"
                                      alt="google">
                             </td>
