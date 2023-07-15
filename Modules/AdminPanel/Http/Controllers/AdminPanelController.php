@@ -17,6 +17,7 @@ use Modules\Media\Repositories\MediaRepoEloquent;
 use Modules\Product\Models\Product;
 use Modules\Product\Repositories\ProductRepoEloquent;
 use Modules\Product\Services\ProductService;
+use Modules\User\Models\User;
 
 class AdminPanelController extends Controller
 {
@@ -205,6 +206,11 @@ class AdminPanelController extends Controller
             }
 
             $order->detail = $cart_detail;
+
+            $user = User::query()->where('id', '=', $order->user_id)->first();
+            $order->user_name = $user->name;
+            $order->user_phone = $user->phone;
+            $order->user_email = $user->email;
         }
 
         return view('adminpanel::adminpanel.orders.orders', ['orders' => $orders]);

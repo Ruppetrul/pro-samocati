@@ -38,6 +38,9 @@
                     <thead>
                     <tr>
                         <th>id</th>
+                        <th>Пользователь</th>
+                        <th>Телефон</th>
+                        <th>Почта</th>
                         <th>Статус</th>
                         <th>Детали</th>
                         <th>Дата обновления</th>
@@ -49,6 +52,19 @@
                             <td>
                                 {{ $order->id }}
                             </td>
+
+                            <td>
+                                {{ $order->user_name }}
+                            </td>
+
+                            <td>
+                                {{ $order->user_phone }}
+                            </td>
+
+                            <td>
+                                {{ $order->user_email }}
+                            </td>
+
                             <td>
                                 @if($order->status === 1)
                                     В обработке
