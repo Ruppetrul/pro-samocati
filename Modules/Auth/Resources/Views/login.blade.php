@@ -11,8 +11,14 @@
                     <div class="log-in-box">
                         <div class="log-in-title">
                             <h3>Добро пожаловать в {{ config('app.name') }}</h3>
-                            <h4>Вход</h4>
                         </div>
+                        @if (isset($message) && $message != '')
+                            <br>
+                                <div style="font-: rad;" align="center">
+                                    <h3><font color="red">{{ $message }}</font></h3>
+                                </div>
+                            <br>
+                        @endif
                         <div class="input-box">
                             <form class="row g-4" method="POST" action="{{ route('login') }}">
                                 @csrf

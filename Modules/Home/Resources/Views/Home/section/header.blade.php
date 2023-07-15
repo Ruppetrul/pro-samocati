@@ -179,7 +179,12 @@
                                         </div>
                                         <div class="delivery-detail">
                                             <h6>Привет,</h6>
-                                            <h5>пользователь</h5>
+                                            @auth()
+                                                <h5>{{ auth()->user()->name }}</h5>
+                                            @endauth
+                                            @guest()
+                                                <h5>Пользователь</h5>
+                                            @endguest
                                         </div>
                                     </div>
                                     <div class="onhover-div onhover-div-login">

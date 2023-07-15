@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\Auth\Http\Controllers;
+use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,11 +17,13 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function view()
+    public function view(Request $request)
     {
         list ($cart_detail, $cart_total) = \Modules\Cart\Http\Controllers\CartController::getCartData();
 
-        return view('Auth::login', compact('cart_detail', 'cart_total'));
+        $message = $request->has('message') ? $request->get('message') : '';
+
+        return view('Auth::login', compact('cart_detail', 'cart_total', 'message'));
     }
 
     /**
@@ -71,7 +74,7 @@ class LoginController extends Controller
 
         ShareService::errorToast('Login unsuccessfully');
 
-        return back();
+        return to_route('login',  array('message' => 'Проверьте логин или пароль.'));
     }
 
     /**
