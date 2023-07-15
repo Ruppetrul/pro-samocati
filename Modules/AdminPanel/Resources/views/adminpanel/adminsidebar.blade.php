@@ -34,7 +34,7 @@
     </li>
 
     <li class="slide">
-        <a class="side-menu__item" href=""><span class="side-menu__label">Заказы</span></a>
+        <a class="side-menu__item" href="{{ route('admin.orders') }}"><span class="side-menu__label">Заказы</span></a>
     </li>
 
 
