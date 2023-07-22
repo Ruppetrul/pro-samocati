@@ -1,6 +1,6 @@
 @extends('Home::Home.layouts.master')
 
-@section('title', 'Home page')
+{{--@section('title', 'Pro-самокаты')--}}
 
 @section('content')
     @include('Home::Pages.home.sliders', [

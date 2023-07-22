@@ -3,7 +3,7 @@
     <head>
         @include('Home::Home.section.meta') {{-- Include meta tags --}}
 
-        <title>@yield('title') - {{ config('app.name') }}</title>
+        <title>{{ config('app.name') }} - Большой выбор запчастей и аксесуаров для электросамокатов в ижевске</title>
 
         @include('Home::Home.section.css') {{-- Include css files --}}
     </head>
