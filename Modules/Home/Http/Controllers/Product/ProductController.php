@@ -43,18 +43,28 @@ class ProductController extends Controller
                 $products_ids[] = $product_cat->product_id;
             }
 
-            $products = $productRepoEloquent
+            $pre = $productRepoEloquent
                 ->getLatest()
                 ->with(['first_media'])
                 ->withCount('rates')
-                ->whereIn('id', array_values($products_ids))
+                ->whereIn('id', array_values($products_ids));
+
+            if ($request->has('search')) {
+                $pre->orWhere('title', 'like', '%' . $request->get('search') . '%');
+            }
+            $products = $pre
                 ->paginate(10);
         } else {
-            $products = $productRepoEloquent
+            $pre = $productRepoEloquent
                 ->getLatest()
                 ->with(['first_media'])
-                ->withCount('rates')
-                ->paginate(10);
+                ->withCount('rates');
+
+            if ($request->has('search')) {
+                $pre->where('title', 'like', '%' . $request->get('search') . '%');
+            }
+
+            $products = $pre->paginate(10);
         }
 
         $advs = resolve(AdvertisingRepoEloquentInterface::class)
@@ -68,7 +78,9 @@ class ProductController extends Controller
 
         list ($cart_detail, $cart_total) = CartController::getCartData();
 
-        return view('Home::Pages.products.index', compact(['products', 'advs', 'categories', 'selected_categories', 'cart_detail', 'cart_total']));
+        $search = $request->has('search') ? $request->get('search') : '';
+
+        return view('Home::Pages.products.index', compact(['products', 'advs', 'categories', 'selected_categories', 'cart_detail', 'cart_total', 'search']));
     }
 
     /**
